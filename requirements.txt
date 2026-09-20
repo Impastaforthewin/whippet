@@ -1,0 +1,13 @@
+# Whippet - Apple Silicon, Python 3.11-3.14.  pip install -r requirements.txt && playwright install chromium
+torch
+transformers
+safetensors
+huggingface_hub
+playwright
+aiohttp
+numpy
+mlx
+mlx-lm
+mlx-audio        # Pocket TTS (Kyutai) - plain text in, no phonemizer/spacy stack
+mlx-whisper
+pymupdf          # --slides: renders your PDF deck inside the browser
