@@ -50,6 +50,77 @@ Taught phrases persist between sessions. Say `forget yeet this tab` to remove on
 
 Commands can also be typed into the panel.
 
+## The longer demos
+
+### Nine steps in one instruction
+
+First, teach the tab-closing phrase:
+
+```text
+when I say yeet this tab, close the tab
+```
+
+Then say this as one instruction:
+
+```text
+go to youtube, search 3blue1brown, click the first video, wait 10 seconds, then pause the video. then open new tab, wait 2 seconds, switch tab, and yeet that tab
+```
+
+Whippet searches, opens a video, lets it play, pauses it, opens another tab, waits, switches back, and closes the video tab using the phrase you taught it. The new tab stays open. Waits are part of the queue, with a countdown in the panel. Say `stop` to drop the remaining steps.
+
+The same alias works inside a typing task:
+
+```text
+open up a new tab, go to wordcounter, type in the quick brown fox, wait 2 seconds, then yeet that tab
+```
+
+### Change your mind mid-sentence
+
+With voice mode on, say this in one breath:
+
+```text
+go to bbc news, no wait, go back
+```
+
+The front gate processes interim speech, so it can pick up “go back” while the navigation is still in progress.
+
+You can also interrupt spoken output. Say `read the page`, then say `stop` while Whippet is reading.
+
+### Find a video and take over the controls
+
+Say the first line as one instruction, then try the playback commands:
+
+```text
+go to youtube, search for ted how to speak so that people want to listen, then click the first video
+pause the video
+turn on captions
+speed 1.5x
+skip ahead thirty seconds
+play
+captions off
+normal speed
+stop
+```
+
+Playback commands operate on the page's HTML5 video player and available caption controls. If “the first video” lands on a Short or a channel, say `go back`, then `click the second video`.
+
+### Present a deck, then ask about it
+
+Start Whippet with `--slides "/path/to/your/deck.pdf"`, using a PDF with at least eight pages for this sequence:
+
+```text
+open my slides
+next
+last slide
+slide four
+what does this slide say
+slide eight
+summarize the deck so far
+first slide
+```
+
+Slide changes use the pre-rendered deck. Questions go to local Qwen with the slide text, so you can move through the presentation and ask about its contents from the same microphone.
+
 ## Run it
 
 You need an **Apple Silicon Mac** and **Python 3.11 or newer**. Python 3.12 is a good starting point. The speech and page-question models use MLX.
